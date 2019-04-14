@@ -1,6 +1,7 @@
 ---
 
-- set_fact:
+- name: set variables
+  set_fact:
     console_bundles_url: "{{ aem_schema }}://{{ aem_host }}:{{ aem_port }}{{ url_bunldes }}"
     console_bundles_json_url: "{{ aem_schema }}://{{ aem_host }}:{{ aem_port }}{{ url_bunldes_json }}"
     console_packages_url: "{{ aem_schema }}://{{ aem_host }}:{{ aem_port }}{{ url_packages }}"
