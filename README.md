@@ -21,8 +21,6 @@ Available variables are listed below, along with default values (see `defaults/m
     aem_username: "admin"
     aem_password: "admin"
     
-    default_role_comment: "aem verify"
-    
     debug_hide: true
     
     url_login: "/libs/granite/core/content/login.html"
