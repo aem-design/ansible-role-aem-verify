@@ -2,8 +2,8 @@
 
 - name: set variables
   set_fact:
-    console_bundles_url: "{{ aem_schema }}://{{ aem_host }}:{{ aem_port }}{{ url_bunldes }}"
-    console_bundles_json_url: "{{ aem_schema }}://{{ aem_host }}:{{ aem_port }}{{ url_bunldes_json }}"
+    console_bundles_url: "{{ aem_schema }}://{{ aem_host }}:{{ aem_port }}{{ url_bundles }}"
+    console_bundles_json_url: "{{ aem_schema }}://{{ aem_host }}:{{ aem_port }}{{ url_bundles_json }}"
     console_packages_url: "{{ aem_schema }}://{{ aem_host }}:{{ aem_port }}{{ url_packages }}"
     login_url: "{{ aem_schema }}://{{ aem_host }}:{{ aem_port }}{{ url_login }}"
     role_comment: "( {{ role_comment | default('aem verify') }} )"
@@ -17,6 +17,7 @@
     delay: "{{ wait_delay | default(5) }}"
   tags:
     - aem-verify
+    - notest
 
 - name: console bundles url {{ role_comment }}
   debug:
@@ -40,6 +41,7 @@
   delay: "{{ wait_delay | default(5) }}"
   tags:
     - aem-verify
+    - notest
 
 - name: system/console/bundles is ready {{ role_comment }}
   debug:
@@ -70,6 +72,7 @@
   delay: "{{ wait_delay | default(5) }}"
   tags:
     - aem-verify
+    - notest
 
 - name: system/console/bundles result {{ role_comment }}
   debug:
@@ -100,6 +103,7 @@
   delay: "{{ wait_delay | default(5) }}"
   tags:
     - aem-verify
+    - notest
 
 - name: console login url {{ role_comment }}
   debug:
@@ -123,3 +127,4 @@
   delay: "{{ wait_delay | default(5) }}"
   tags:
     - aem-verify
+    - notest
