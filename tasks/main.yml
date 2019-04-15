@@ -9,6 +9,7 @@
     role_comment: "( {{ role_comment | default('aem verify') }} )"
   tags:
     - aem-verify
+    - notest
 
 - name: wait for aem service {{ role_comment }}
   wait_for:
@@ -25,6 +26,7 @@
   no_log: "{{ debug_hide }}"
   tags:
     - aem-verify
+    - notest
 
 - name: wait until system/console/bundles ready {{ role_comment }}
   uri:
@@ -49,6 +51,7 @@
   no_log: "{{ debug_hide }}"
   tags:
     - aem-verify
+    - notest
 
 - name: console bundles json url {{ role_comment }}
   debug:
@@ -56,6 +59,7 @@
   no_log: "{{ debug_hide }}"
   tags:
     - aem-verify
+    - notest
 
 - name: wait for all bundles to load {{ role_comment }}
   uri:
@@ -80,6 +84,7 @@
   no_log: "{{ debug_hide }}"
   tags:
     - aem-verify
+    - notest
 
 - name: console packages url {{ role_comment }}
   debug:
@@ -87,6 +92,7 @@
   no_log: "{{ debug_hide }}"
   tags:
     - aem-verify
+    - notest
 
 - name: wait for package manager to load {{ role_comment }}
   uri:
@@ -111,6 +117,7 @@
   no_log: "{{ debug_hide }}"
   tags:
     - aem-verify
+    - notest
 
 ####
 #### Please note that if you have return_content: true for URL's and its content has "#" you will have pain
