@@ -11,5 +11,5 @@ debug_hide: true
 
 url_login: "/libs/granite/core/content/login.html"
 url_packages: "/crx/packmgr/service.jsp"
-url_bunldes_json: "/system/console/bundles.json"
-url_bunldes: "/system/console/bundles"
+url_bundles_json: "/system/console/bundles.json"
+url_bundles: "/system/console/bundles"
