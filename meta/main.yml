@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: aem-verify
   author: Max Barrass
   description: Check AEM Instance is loaded
   company: aem.design
