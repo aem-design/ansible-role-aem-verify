@@ -2,7 +2,7 @@
 
 wait_delay: 1
 aem_schema: "http"
-aem_host: "localhost"
+aem_host: "{{ inventory_hostname | default('localhost') }}"
 aem_port: 4502
 aem_username: "admin"
 aem_password: "admin"
