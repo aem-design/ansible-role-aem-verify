@@ -23,9 +23,15 @@
 
   roles:
     - {
-      role: "{{ role_name }}",
+      role: "aem_design.aem_license",
       aem_license_key: "{{ service_aem_license_key }}",
       aem_license_name: "{{ service_aem_license_name }}",
+      aem_port: "5502",
+      aem_host: "{{ dockerhost_ip.stdout }}",
+      debug_hide: false
+    }
+    - {
+      role: "{{ role_name }}",
       aem_port: "5502",
       aem_host: "{{ dockerhost_ip.stdout }}",
       debug_hide: false
