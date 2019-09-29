@@ -12,7 +12,7 @@
       when: ansible_os_family == 'Debian'
 
     - name: get docker host ip
-      become: yes
+      become: true
       shell: |
         set -o pipefail
         /sbin/ip route | awk '/default/ { print $3 }'
