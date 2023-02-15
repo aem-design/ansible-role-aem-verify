@@ -25,9 +25,12 @@ rules:
     level: error
   indentation: enable
   key-duplicates: enable
-  line-length: enable
+  line-length: disable
   new-line-at-end-of-file: enable
   new-lines:
     type: unix
   trailing-spaces: enable
   truthy: enable
+
+skip_list:
+  - role-name

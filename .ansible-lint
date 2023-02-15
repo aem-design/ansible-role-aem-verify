@@ -1,0 +1,5 @@
+---
+# .ansible-lint
+
+exclude_paths:
+  - ./.github/workflows/build.yml

@@ -49,6 +49,14 @@ None.
     - aem_design.aem_verify
 ```
 
+## Debug
+
+Run container to test this role:
+
+```bash
+docker run -it -w /build/source -v ${PWD}:/build/source -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v /var/run/docker.sock:/var/run/docker.sock -v ${HOME}/.m2:/build/.m2 --net=host aemdesign/ansible-playbook:centos7 /bin/bash --login
+```
+
 ## License
 
 Apache 2.0
