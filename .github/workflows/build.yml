@@ -90,7 +90,7 @@ jobs:
           molecule --debug test
 
       - name: Push role to Ansible Galaxy
-        uses: robertdebock/galaxy-action@1
+        uses: robertdebock/galaxy-action@1.2.0
         with:
           galaxy_api_key: ${{ secrets.galaxy_api_key }}
           git_branch: master
