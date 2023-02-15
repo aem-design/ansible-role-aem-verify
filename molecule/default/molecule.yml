@@ -5,8 +5,6 @@ driver:
   name: docker
 provisioner:
   name: ansible
-  lint:
-    name: ansible-lint
   playbooks:
     prepare: prepare.yml
     converge: ${MOLECULE_PLAYBOOK:-coverage.yml}
@@ -40,5 +38,3 @@ platforms:
     privileged: true
 verifier:
   name: testinfra
-  lint:
-    name: flake8
