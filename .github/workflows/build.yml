@@ -80,6 +80,11 @@ jobs:
           pip3 install --ignore-installed PyYAML
           pip3 install testinfra molecule docker molecule-docker yamllint flake8 ansible
 
+      - name: Lint
+        run: |
+          yamllint .
+          ansible-lint .
+
       - name: Run tests
         run: |
           molecule --debug test
