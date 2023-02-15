@@ -19,7 +19,7 @@ jobs:
       ADOBECLOUD_USERNAME: ${{ secrets.ADOBECLOUD_USERNAME }}
       ADOBECLOUD_PASSWORD: ${{ secrets.ADOBECLOUD_PASSWORD }}
       ROLE_META: "meta/main.yml"
-      PYTHON_VERSION: 3.6
+      PYTHON_VERSION: "3.10"
 
     steps:
       - name: Experimental Status
@@ -36,9 +36,9 @@ jobs:
           echo $'{\n    "experimental": true\n}' | sudo tee /etc/docker/daemon.json
           sudo service docker restart
           docker version -f '{{.Server.Experimental}}'
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: set up python ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: set env variables
