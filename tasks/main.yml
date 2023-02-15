@@ -1,6 +1,6 @@
 ---
 
-- name: set variables
+- name: Set variables
   set_fact:
     console_bundles_url: "{{ aem_schema }}://{{ aem_host }}:{{ aem_port }}{{ url_bundles }}"
     console_bundles_json_url: "{{ aem_schema }}://{{ aem_host }}:{{ aem_port }}{{ url_bundles_json }}"
@@ -11,7 +11,7 @@
     - aem-verify
     - notest
 
-- name: wait for aem service {{ role_comment }}
+- name: Wait for aem service {{ role_comment }}
   wait_for:
     host: "{{ aem_host }}"
     port: "{{ aem_port }}"
@@ -20,7 +20,7 @@
     - aem-verify
     - notest
 
-- name: console bundles url {{ role_comment }}
+- name: Console bundles url {{ role_comment }}
   debug:
     msg: "{{ console_bundles_url }}"
   no_log: "{{ debug_hide }}"
@@ -28,7 +28,7 @@
     - aem-verify
     - notest
 
-- name: wait until system/console/bundles ready {{ role_comment }}
+- name: Wait until system/console/bundles ready {{ role_comment }}
   uri:
     url: "{{ console_bundles_url }}"
     force_basic_auth: true
@@ -45,7 +45,7 @@
     - aem-verify
     - notest
 
-- name: system/console/bundles is ready {{ role_comment }}
+- name: Check system/console/bundles is ready {{ role_comment }}
   debug:
     msg: "{{ web_console }}"
   no_log: "{{ debug_hide }}"
@@ -53,7 +53,7 @@
     - aem-verify
     - notest
 
-- name: console bundles json url {{ role_comment }}
+- name: Check console bundles json url {{ role_comment }}
   debug:
     msg: "{{ console_bundles_json_url }}"
   no_log: "{{ debug_hide }}"
@@ -61,7 +61,7 @@
     - aem-verify
     - notest
 
-- name: wait for all bundles to load {{ role_comment }}
+- name: Wait for all bundles to load {{ role_comment }}
   uri:
     url: "{{ console_bundles_json_url }}"
     force_basic_auth: true
@@ -78,7 +78,7 @@
     - aem-verify
     - notest
 
-- name: system/console/bundles result {{ role_comment }}
+- name: Check system/console/bundles result {{ role_comment }}
   debug:
     msg: "{{ bundles_result }}"
   no_log: "{{ debug_hide }}"
@@ -86,7 +86,7 @@
     - aem-verify
     - notest
 
-- name: console packages url {{ role_comment }}
+- name: Check console packages url {{ role_comment }}
   debug:
     msg: "{{ console_packages_url }}"
   no_log: "{{ debug_hide }}"
@@ -94,7 +94,7 @@
     - aem-verify
     - notest
 
-- name: wait for package manager to load {{ role_comment }}
+- name: Wait for package manager to load {{ role_comment }}
   uri:
     url: "{{ console_packages_url }}"
     force_basic_auth: true
@@ -111,7 +111,7 @@
     - aem-verify
     - notest
 
-- name: console login url {{ role_comment }}
+- name: Check console login url {{ role_comment }}
   debug:
     msg: "{{ login_url }}"
   no_log: "{{ debug_hide }}"
@@ -122,7 +122,7 @@
 ####
 #### Please note that if you have return_content: true for URL's and its content has "#" you will have pain
 #### this one does
-- name: ensure login page {{ role_comment }}
+- name: Ensure login page {{ role_comment }}
   uri:
     url: "{{ login_url }}"
     timeout: 300

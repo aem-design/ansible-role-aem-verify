@@ -3,3 +3,10 @@
 
 exclude_paths:
   - ./.github/workflows/build.yml
+
+skip_list:
+  - fqcn-builtins
+  - fqcn[action]
+  - fqcn[action-core]
+  - fqcn[canonical]
+  - name[casing]
