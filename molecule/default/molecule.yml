@@ -9,8 +9,6 @@ lint: |
   ansible-lint .
 provisioner:
   name: ansible
-  lint:
-    name: ansible-lint
   playbooks:
     prepare: prepare.yml
     converge: ${MOLECULE_PLAYBOOK:-coverage.yml}
